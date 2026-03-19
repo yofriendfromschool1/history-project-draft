@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Auto Stealth Entry Overlay -->
+    <div id="entry-overlay">
+        <button id="close-overlay" title="Continue Normally">✕</button>
+        <h1>Welcome</h1>
+        <p>Click anywhere to enter the Oasis Stealth Mode...</p>
+    </div>
+
+    <!-- Background Animation Elements -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">Oasis</div>
+        <div class="nav-links">
+            <a href="#proxies" class="active">Proxies</a>
+            <a href="#games">Games</a>
+            <a href="#repos">Github Repos</a>
+            <a href="#settings">Settings</a>
+        </div>
+        <div class="nav-actions">
+            <button id="panic-btn" class="btn danger" title="Press Escape or ~ to Trigger">Panic! (Esc)</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+        <!-- Header -->
+        <header class="hero">
+            <h1>Welcome to the Oasis</h1>
+            <p>Your portal to the unfiltered web. Fast, secure, and beautiful.</p>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for a proxy or game...">
+                <button class="btn glow">Search</button>
+            </div>
+        </header>
+
+        <!-- Proxies Section -->
+        <section id="proxies" class="tab-content active-section">
+            <h2 class="section-title">Web Proxies</h2>
+            <div class="grid" id="proxy-grid">
+                <!-- Cards will be populated dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="tab-content">
+            <h2 class="section-title">Unblocked Games</h2>
+            <div class="grid" id="game-grid">
+               <!-- Game cards injected via JS -->
+            </div>
+        </section>
+
+        <!-- Repos Section -->
+        <section id="repos" class="tab-content">
+            <h2 class="section-title">yofriendfromschool1 Local Archive</h2>
+            <div class="grid" id="repo-grid">
+                <!-- Repo cards injected via JS -->
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="tab-content">
+             <h2 class="section-title">Cloaking Settings</h2>
+             <div class="glass-card settings-card">
+                 <h3>Tab Cloaker</h3>
+                 <p>Disguise this tab as an educational site.</p>
+                 <div class="setting-controls">
+                     <select id="cloak-preset" class="glass-input">
+                         <option value="none">None</option>
+                         <option value="google">Google</option>
+                         <option value="docs">Google Docs</option>
+                         <option value="drive">Google Drive</option>
+                         <option value="classroom">Google Classroom</option>
+                         <option value="canvas">Canvas</option>
+                     </select>
+                     <button id="apply-cloak" class="btn">Apply Cloak</button>
+                 </div>
+                 <hr>
+                 <h3>Panic Button Settings</h3>
+                 <p>Configure where the panic button takes you.</p>
+                 <div class="setting-controls">
+                      <input type="text" id="panic-url" class="glass-input" value="https://classroom.google.com" placeholder="e.g. https://classroom.google.com">
+                 </div>
+                 <hr>
+                 <h3>Stealth Mode (about:blank)</h3>
+                 <p>Hide this site entirely inside an empty tab. (Bypasses most history loggers)</p>
+                 <div class="setting-controls">
+                     <button id="launch-blank" class="btn glow">Launch Stealth Mode</button>
+                 </div>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- Iframe Viewer Overlay -->
+    <div id="iframe-container" class="iframe-overlay">
+        <div class="iframe-header">
+            <span id="iframe-title">Loading...</span>
+            <div class="iframe-controls">
+                <button id="iframe-fullscreen" class="btn">Fullscreen</button>
+                <button id="iframe-close" class="btn danger">Close</button>
+            </div>
+        </div>
+        <iframe id="main-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Scripts -->
+    <script src="repos_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
